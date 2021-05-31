@@ -12,6 +12,7 @@
 	<artifactId>activiti-spring-boot-starter-basic</artifactId>
 	<!-- <properties> <spring.framework.version>4.1.4.RELEASE</spring.framework.version> 
 		</properties> -->
+	<version>6.0.0-boot2</version>
 
 	<dependencies>
 		<!-- Support for auto-completion support in Boot 1.2 -->
@@ -25,11 +26,12 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-engine</artifactId>
+			<version>6.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring</artifactId>
-
+			<version>6.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,6 +42,7 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-rest</artifactId>
+			<version>6.0.0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -55,6 +58,7 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-common-rest</artifactId>
+			<version>6.0.0</version>
 			<optional>true</optional>
 		</dependency>
 
@@ -86,6 +90,7 @@
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-bpmn-layout</artifactId>
+			<version>6.0.0</version>
 			<optional>true</optional>
 		</dependency>
 
@@ -135,7 +140,9 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
-						<version>2.1.1</version>
+						<configuration>
+							<project>1.8</project>
+						</configuration>
 						<executions>
 							<execution>
 								<id>attach-sources</id>
