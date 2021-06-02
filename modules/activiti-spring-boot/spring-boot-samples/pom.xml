@@ -10,6 +10,7 @@
         <version>6.0.0-boot2</version>
     </parent>
 
+
     <artifactId>activiti-spring-boot-samples</artifactId>
 
     <packaging>pom</packaging>

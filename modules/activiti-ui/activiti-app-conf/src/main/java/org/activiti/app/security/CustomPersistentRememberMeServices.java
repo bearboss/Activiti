@@ -182,11 +182,16 @@ public class CustomPersistentRememberMeServices extends AbstractRememberMeServic
     final String presentedToken = cookieTokens[1];
 
     PersistentToken token = persistentTokenService.getPersistentToken(presentedSeries);
-
-    if (token == null) {
-      // No series match, so we can't authenticate using this cookie
-      throw new RememberMeAuthenticationException("No persistent token found for series id: " + presentedSeries);
+    try{
+      if (token == null || token.getTokenValue() == null) {
+        // No series match, so we can't authenticate using this cookie
+        throw new RememberMeAuthenticationException("No persistent token found for series id: " + presentedSeries);
+      }
+    }catch (Exception e){
+      e.printStackTrace();
+      throw new RememberMeAuthenticationException("No persistent token found for series id");
     }
+
 
     // We have a match for this user/series combination
     if (!presentedToken.equals(token.getTokenValue())) {

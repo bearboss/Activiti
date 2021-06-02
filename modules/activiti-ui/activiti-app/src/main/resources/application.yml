@@ -1,6 +1,10 @@
-liquibase:
-  enabled: false
+server:
+  port: 9999
+  servlet:
+    contextpath: "/activiti-app"
 spring:
+  liquibase:
+    enabled: false
   freemarker:
     check-template-location: false
   jpa:
@@ -8,10 +12,11 @@ spring:
       hibernate:
         cache:
           use_second_level_cache: false
+    open-in-view: true
+    generate-ddl: true
+  aop:
+    proxy-target-class: false
 
-server:
-  port: 9999
-  context-path: "/activiti-app"
 
 
 
